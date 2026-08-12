@@ -1,0 +1,32 @@
+<header class="site-header">
+  <div class="wrap">
+    <a href="{{ '/' | relative_url }}" class="logo">
+      <img src="{{ '/assets/img/logo-light-bg.png' | relative_url }}" alt="iGoHire" class="logo-img">
+    </a>
+
+    <nav class="primary-nav" id="primary-nav">
+      <ul>
+        {% for item in site.data.nav %}
+          <li class="{% if item.children %}has-children{% endif %}">
+            <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            {% if item.children %}
+              <ul class="dropdown">
+                {% for child in item.children %}
+                  <li><a href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="header-cta">
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline">Contact</a>
+      <a href="{{ '/schedule-consultation/' | relative_url }}" class="btn btn-primary">Schedule Consultation</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

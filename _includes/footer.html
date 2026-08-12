@@ -1,0 +1,37 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="{{ '/assets/img/logo-dark-bg.png' | relative_url }}" alt="iGoHire" class="footer-logo-img">
+      </div>
+
+      <div>
+        <h4>Site</h4>
+        <ul>
+          {% for item in site.data.nav %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            {% if item.children %}
+              {% for child in item.children %}
+                <li><a href="{{ child.url | relative_url }}">&nbsp;&nbsp;— {{ child.title }}</a></li>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@igohire.com">info@igohire.com</a></li>
+          <li>Florida Office — 941-615-8050</li>
+          <li>Colorado Office — 719-482-0143</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; {{ 'now' | date: "%Y" }} iGoHire&reg;. All rights reserved.</span>
+      <span>Executive branches in Florida &amp; Colorado — licensees nationwide.</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,15 @@
+<section class="cta-band">
+  <div class="wrap">
+    {% if include.heading %}<h2>{{ include.heading }}</h2>{% endif %}
+    <div class="btn-group">
+      {% if include.primary_url %}
+        <a href="{{ include.primary_url }}" class="btn btn-primary" target="_blank" rel="noopener">{{ include.primary_label | default: "Schedule Your Consultation" }}</a>
+      {% else %}
+        <a href="https://forms.fillout.com/t/mTm1Q4jFHHus" class="btn btn-primary" target="_blank" rel="noopener">Schedule Your Consultation</a>
+      {% endif %}
+      {% unless include.hide_contact %}
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline">Contact Us</a>
+      {% endunless %}
+    </div>
+  </div>
+</section>
