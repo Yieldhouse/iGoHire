@@ -93,6 +93,11 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
     linear-gradient(var(--brass), var(--brass)) center / 100% 1px no-repeat;
 }
 
+.split .eyebrow {
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
 /* ==========================================================
    Buttons
    ========================================================== */
@@ -131,6 +136,12 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 }
 .on-dark .btn-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
 
+.cta-band .btn-outline {
+  color: #fff;
+  border-color: var(--line-on-dark);
+}
+.cta-band .btn-outline:hover { background: #fff; color: var(--ink); border-color: #fff; }
+
 .btn-group { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 1.6em; }
 
 /* ==========================================================
@@ -150,12 +161,12 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 96px;
+  height: 100px;
   gap: 28px;
 }
 
 .logo { flex-shrink: 0; display: flex; align-items: center; }
-.logo-img { height: 46px; width: auto; display: block; }
+.logo-img { height: 52px; width: auto; display: block; }
 
 .primary-nav { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-width: 0; }
 
@@ -267,8 +278,8 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 .hero .wrap { position: relative; z-index: 1; }
 .hero-split {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(32px, 5vw, 72px);
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(32px, 5vw, 64px);
   align-items: center;
 }
 .hero-content { max-width: 560px; }
