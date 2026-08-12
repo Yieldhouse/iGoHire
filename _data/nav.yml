@@ -1,0 +1,41 @@
+# ============================================================
+# SITE NAVIGATION — single source of truth
+# ============================================================
+# Add, remove, or reorder a link here and it updates the header
+# AND the footer automatically. Nothing else needs to change.
+#
+# Fields:
+#   title    - text shown in the nav
+#   url      - link destination (site-relative, starts with /)
+#   children - optional dropdown items (title + url), used in the
+#              header only; footer prints children as flat links
+# ============================================================
+
+- title: Home
+  url: /
+
+- title: Services
+  url: /services/
+  children:
+    - title: For Employers
+      url: /services/employers/
+    - title: For Professionals
+      url: /services/aspirant/
+
+- title: Schedule Consultation
+  url: /schedule-consultation/
+
+- title: Listings
+  url: /listings/
+
+- title: About
+  url: /about/
+
+- title: Licensees
+  url: /licensees/
+
+- title: Our Clients
+  url: /our-clients/
+
+- title: Contact
+  url: /contact/
