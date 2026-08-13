@@ -482,14 +482,14 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 
 .person {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 28px;
+  grid-template-columns: 190px 1fr;
+  gap: 32px;
   padding: 32px 0;
   border-top: 1px solid var(--line);
 }
 .person:first-of-type { border-top: none; }
 .avatar {
-  width: 140px; height: 140px;
+  width: 190px; height: 190px;
   border-radius: 50%;
   background: var(--ink);
   color: var(--brass-light);
@@ -499,7 +499,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   flex-shrink: 0;
   overflow: hidden;
 }
-.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center 22%; }
 .person .role {
   font-size: 0.75rem;
   font-weight: 700;
@@ -645,10 +645,18 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 .footer-bottom {
   padding-top: 28px;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
   font-size: 0.82rem;
 }
+
+.credit-link {
+  font-size: 1.05em;
+  font-weight: 700;
+  color: var(--brass-light);
+}
+.credit-link:hover { color: #fff; }
 
 /* ==========================================================
    Responsive
