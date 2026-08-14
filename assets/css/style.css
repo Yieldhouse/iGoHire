@@ -1,22 +1,23 @@
 /* ==========================================================
-   iGoHireLeaders — Design Tokens
-   Executive search / career placement. The mark is a "match":
-   two nodes joined by a line — candidate and employer, connected
-   with precision. That motif recurs as the signature element.
+   iGoHire — Design Tokens
+   Brand palette pulled directly from the logo: pure black +
+   #F26522 orange. The mark is a "match" — two nodes joined by
+   a line — candidate and employer, connected with precision.
+   That motif recurs as the signature element.
    ========================================================== */
 
 :root {
   /* Color */
-  --ink:          #12202F;   /* primary dark / text on light */
-  --ink-soft:     #1C2E42;   /* dark section background */
+  --ink:          #0B0B0B;   /* primary dark / text on light */
+  --ink-soft:     #1A1A1A;   /* dark section background */
   --paper:        #F6F4EF;   /* light section background */
   --paper-raised: #FFFFFF;   /* cards on paper */
-  --brass:        #9C7A3C;   /* primary accent */
-  --brass-light:  #C9A768;   /* accent on dark backgrounds */
+  --accent:        #F26522;   /* primary accent — brand orange */
+  --accent-light:  #FA7832;   /* accent on dark backgrounds */
   --slate:        #5C6672;   /* secondary text */
-  --slate-on-dark:#A8B2BE;   /* secondary text on dark */
+  --slate-on-dark:#B8B8B8;   /* secondary text on dark */
   --line:         #DDD9D0;   /* hairline borders on paper */
-  --line-on-dark: #33465C;   /* hairline borders on dark */
+  --line-on-dark: #333333;   /* hairline borders on dark */
 
   /* Type */
   --font-display: "Fraunces", Georgia, serif;
@@ -27,6 +28,7 @@
   --gutter: clamp(20px, 5vw, 64px);
   --radius: 3px;
 }
+
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -77,7 +79,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--accent);
   margin-bottom: 1em;
 }
 
@@ -88,9 +90,9 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   height: 6px;
   flex-shrink: 0;
   background:
-    radial-gradient(circle, var(--brass) 1.6px, transparent 1.7px) left center / 6px 6px no-repeat,
-    radial-gradient(circle, var(--brass) 1.6px, transparent 1.7px) right center / 6px 6px no-repeat,
-    linear-gradient(var(--brass), var(--brass)) center / 100% 1px no-repeat;
+    radial-gradient(circle, var(--accent) 1.6px, transparent 1.7px) left center / 6px 6px no-repeat,
+    radial-gradient(circle, var(--accent) 1.6px, transparent 1.7px) right center / 6px 6px no-repeat,
+    linear-gradient(var(--accent), var(--accent)) center / 100% 1px no-repeat;
 }
 
 .split .eyebrow {
@@ -118,10 +120,10 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 }
 
 .btn-primary {
-  background: var(--brass);
+  background: var(--accent);
   color: #fff;
 }
-.btn-primary:hover { background: #8a6a33; }
+.btn-primary:hover { background: #CE561D; }
 
 .btn-outline {
   background: transparent;
@@ -198,7 +200,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   border-radius: var(--radius);
   transition: color 0.15s ease;
 }
-.nav-link:hover { color: var(--brass); }
+.nav-link:hover { color: var(--accent); }
 
 .has-children > .nav-link::after {
   content: "";
@@ -237,7 +239,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   font-size: 0.88rem;
   border-radius: var(--radius);
 }
-.dropdown a:hover { background: var(--paper); color: var(--brass); }
+.dropdown a:hover { background: var(--paper); color: var(--accent); }
 
 .header-cta { flex-shrink: 0; display: flex; align-items: center; justify-content: flex-end; gap: 14px; }
 .header-cta .btn { padding: 11px 20px; font-size: 0.85rem; white-space: nowrap; }
@@ -267,8 +269,8 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 
 /* Employers and Professionals pages get their own hero tone so they
    read as distinct from the homepage's navy hero at a glance. */
-.hero-employers { background: #241B10; }
-.hero-professionals { background: #0E2530; }
+.hero-employers { background: #150F0A; }
+.hero-professionals { background: #0A1214; }
 
 .hero::before {
   /* faint connection-line network, signature motif, background right */
@@ -277,11 +279,11 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   top: -10%; right: -8%;
   width: 640px; height: 640px;
   background-image:
-    radial-gradient(circle, var(--brass-light) 2px, transparent 2.2px),
-    radial-gradient(circle, var(--brass-light) 2px, transparent 2.2px),
-    radial-gradient(circle, var(--brass-light) 2px, transparent 2.2px),
-    linear-gradient(115deg, transparent 49.6%, rgba(201,167,104,0.35) 49.8%, rgba(201,167,104,0.35) 50.2%, transparent 50.4%),
-    linear-gradient(35deg, transparent 49.6%, rgba(201,167,104,0.22) 49.8%, rgba(201,167,104,0.22) 50.2%, transparent 50.4%);
+    radial-gradient(circle, var(--accent-light) 2px, transparent 2.2px),
+    radial-gradient(circle, var(--accent-light) 2px, transparent 2.2px),
+    radial-gradient(circle, var(--accent-light) 2px, transparent 2.2px),
+    linear-gradient(115deg, transparent 49.6%, rgba(250,120,50,0.35) 49.8%, rgba(250,120,50,0.35) 50.2%, transparent 50.4%),
+    linear-gradient(35deg, transparent 49.6%, rgba(250,120,50,0.22) 49.8%, rgba(250,120,50,0.22) 50.2%, transparent 50.4%);
   background-size: 100% 100%;
   background-position: 30% 20%, 68% 62%, 15% 75%, 0 0, 0 0;
   background-repeat: no-repeat;
@@ -353,7 +355,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 .card .icon-node {
   width: 34px; height: 34px;
   border-radius: 50%;
-  border: 1.4px solid var(--brass);
+  border: 1.4px solid var(--accent);
   margin-bottom: 18px;
   position: relative;
 }
@@ -362,7 +364,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   position: absolute;
   inset: 9px;
   border-radius: 50%;
-  background: var(--brass);
+  background: var(--accent);
 }
 
 /* Listing cards */
@@ -378,7 +380,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--accent);
   margin-bottom: 10px;
   display: block;
 }
@@ -420,7 +422,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 .stat .num {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 4vw, 3rem);
-  color: var(--brass-light);
+  color: var(--accent-light);
   line-height: 1;
   margin-bottom: 0.3em;
 }
@@ -450,7 +452,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   align-items: center; justify-content: center;
   gap: 14px;
   background:
-    linear-gradient(135deg, rgba(156,122,60,0.18), transparent 60%),
+    linear-gradient(135deg, rgba(242,101,34,0.18), transparent 60%),
     var(--ink-soft);
   color: var(--slate-on-dark);
   text-align: center;
@@ -459,14 +461,14 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 .video-placeholder .play-btn {
   width: 62px; height: 62px;
   border-radius: 50%;
-  border: 1.4px solid var(--brass-light);
+  border: 1.4px solid var(--accent-light);
   display: flex; align-items: center; justify-content: center;
 }
 .video-placeholder .play-btn::after {
   content: "";
   border-style: solid;
   border-width: 8px 0 8px 13px;
-  border-color: transparent transparent transparent var(--brass-light);
+  border-color: transparent transparent transparent var(--accent-light);
   margin-left: 3px;
 }
 .video-placeholder .label {
@@ -493,7 +495,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   border-radius: var(--radius);
   background: var(--paper-raised);
   border: 1px solid var(--line);
-  color: var(--brass-light);
+  color: var(--accent-light);
   font-family: var(--font-display);
   font-size: 2.4rem;
   display: flex; align-items: center; justify-content: center;
@@ -506,7 +508,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--accent);
   margin-bottom: 0.3em;
 }
 .person .contact-line { font-size: 0.88rem; color: var(--slate); margin-bottom: 0.9em; }
@@ -549,7 +551,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--brass);
+  color: var(--accent);
   display: block;
   margin-bottom: 0.6em;
 }
@@ -589,7 +591,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 .form-field input:focus,
 .form-field textarea:focus {
   outline: none;
-  border-color: var(--brass);
+  border-color: var(--accent);
 }
 .form-field textarea { resize: vertical; min-height: 140px; }
 .contact-form .btn { border: none; cursor: pointer; }
@@ -636,7 +638,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 }
 .footer-grid ul { list-style: none; margin: 0; padding: 0; }
 .footer-grid li { margin-bottom: 0.7em; }
-.footer-grid a:hover { color: var(--brass-light); }
+.footer-grid a:hover { color: var(--accent-light); }
 .footer-logo-img {
   height: 42px;
   width: auto;
@@ -655,7 +657,7 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
 .credit-link {
   font-size: 1.05em;
   font-weight: 700;
-  color: var(--brass-light);
+  color: var(--accent-light);
 }
 .credit-link:hover { color: #fff; }
 
