@@ -1,17 +1,26 @@
-title: iGoHire
-description: Executive search and career placement — precision hiring for employers and career-minded professionals.
+title: Choose Arkansas
+description: >-
+  Choose Arkansas unites student-athletes, fans, and business owners across
+  all of Arkansas — funding opportunity, building community, and keeping
+  talent right where it belongs.
 url: "https://yieldhouse.github.io"
-
+baseurl: "/Choose-Arkansas"
 
 markdown: kramdown
-plugins:
-  - jekyll-sitemap
+permalink: /:title/
+
+collections:
+  posts:
+    output: true
 
 defaults:
   - scope:
       path: ""
+      type: "posts"
     values:
-      layout: "default"
+      layout: "post"
 
 exclude:
   - README.md
+  - Gemfile
+  - Gemfile.lock

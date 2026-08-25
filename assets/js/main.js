@@ -1,54 +1,62 @@
-document.addEventListener('DOMContentLoaded', function () {
-  var toggle = document.getElementById('nav-toggle');
-  var nav = document.getElementById('primary-nav');
+(function () {
+  var navItems = document.querySelectorAll('[data-nav-item]');
+  var menuToggle = document.getElementById('menu-toggle');
+  var mainNav = document.getElementById('main-nav');
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
+  function closeAllDropdowns(except) {
+    navItems.forEach(function (item) {
+      if (item !== except) {
+        item.classList.remove('open');
+        var btn = item.querySelector('.nav-label');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      }
     });
   }
 
-  // On mobile, tapping a "has-children" link toggles its dropdown
-  // instead of navigating away immediately.
-  document.querySelectorAll('.has-children > .nav-link').forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      if (window.innerWidth <= 900) {
-        var parent = link.parentElement;
-        var alreadyOpen = parent.classList.contains('open');
-        if (!alreadyOpen) {
-          e.preventDefault();
-          parent.classList.add('open');
-        }
-      }
+  navItems.forEach(function (item) {
+    var btn = item.querySelector('.nav-label');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = item.classList.contains('open');
+      closeAllDropdowns(item);
+      item.classList.toggle('open', !isOpen);
+      btn.setAttribute('aria-expanded', String(!isOpen));
     });
   });
 
-  // Contact form — no backend, so submitting builds a pre-filled
-  // mailto: link (to info@igohire.com) and opens the visitor's
-  // default mail client instead of posting anywhere.
-  var contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+  document.addEventListener('click', function (e) {
+    var isInsideNav = mainNav && mainNav.contains(e.target);
+    if (!isInsideNav) {
+      closeAllDropdowns();
+    }
+  });
 
-      var name = contactForm.elements['name'].value.trim();
-      var email = contactForm.elements['email'].value.trim();
-      var subjectField = contactForm.elements['subject'].value.trim();
-      var message = contactForm.elements['message'].value.trim();
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeAllDropdowns();
+      if (mainNav) mainNav.classList.remove('nav-open');
+      if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 
-      var subject = subjectField || ('Website inquiry from ' + name);
-      var body =
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n\n' +
-        message;
-
-      var mailtoLink =
-        'mailto:info@igohire.com' +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      window.location.href = mailtoLink;
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = mainNav.classList.toggle('nav-open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      if (!isOpen) closeAllDropdowns();
     });
   }
-});
+
+  // Close mobile menu when a plain link (not a dropdown toggle) is clicked
+  if (mainNav) {
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mainNav.classList.remove('nav-open');
+        if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+        closeAllDropdowns();
+      });
+    });
+  }
+})();

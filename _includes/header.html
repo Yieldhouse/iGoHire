@@ -1,32 +1,67 @@
 <header class="site-header">
-  <div class="wrap">
-    <a href="{{ '/' | relative_url }}" class="logo">
-      <img src="{{ '/assets/img/logo-light-bg.png' | relative_url }}" alt="iGoHire" class="logo-img">
+  <div class="header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <img src="{{ '/assets/images/choose-arkansas-logo.png' | relative_url }}" alt="Choose Arkansas logo">
     </a>
 
-    <nav class="primary-nav" id="primary-nav">
-      <ul>
-        {% for item in site.data.nav %}
-          <li class="{% if item.children %}has-children{% endif %}">
-            <a class="nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-            {% if item.children %}
-              <ul class="dropdown">
-                {% for child in item.children %}
-                  <li><a href="{{ child.url | relative_url }}">{{ child.title }}</a></li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+    <nav class="main-nav" id="main-nav">
+      <div class="nav-item">
+        <a class="nav-link" href="{{ '/memberships/' | relative_url }}">Memberships</a>
+      </div>
+      <div class="nav-item" data-nav-item>
+        <button type="button" class="nav-label" aria-expanded="false">About Us <svg class="chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown">
+          <a href="{{ '/boardmembers/' | relative_url }}">Board Members</a>
+          <a href="{{ '/contactus/' | relative_url }}">Contact Us</a>
+          <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        </div>
+      </div>
+      <div class="nav-item" data-nav-item>
+        <button type="button" class="nav-label" aria-expanded="false">Marketing <svg class="chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown">
+          <a href="{{ '/gtm/' | relative_url }}">GTM Marketing</a>
+          <a href="{{ '/gtmpricing/' | relative_url }}">Pricing</a>
+        </div>
+      </div>
+      <div class="nav-item" data-nav-item>
+        <button type="button" class="nav-label" aria-expanded="false">Live Events <svg class="chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown">
+          <a href="{{ '/upcoming-events/' | relative_url }}">Upcoming Events</a>
+          <a href="{{ '/camps-athlete-events/' | relative_url }}">Camps & Athlete Events</a>
+          <a href="{{ '/HogsGiveaway/' | relative_url }}">Hogs Football Giveaway</a>
+        </div>
+      </div>
+      <div class="nav-item" data-nav-item>
+        <button type="button" class="nav-label" aria-expanded="false">Shop <svg class="chev" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="dropdown">
+          <a href="{{ '/shop/' | relative_url }}">Choose Arkansas Shop</a>
+        </div>
+      </div>
+
+      <a class="btn-nav nav-cta-mobile" href="{{ '/memberships/' | relative_url }}">JOIN NOW</a>
     </nav>
 
-    <div class="header-cta">
-      <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline">Contact</a>
-      <a href="{{ '/schedule-consultation/' | relative_url }}" class="btn btn-primary">Schedule Consultation</a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    <a class="btn-nav nav-cta-desktop" href="{{ '/memberships/' | relative_url }}">JOIN NOW</a>
+
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  {% unless page.hide_marquee %}
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span><a href="{{ '/HogsGiveaway/' | relative_url }}">Click Here - 2026 Arkansas vs. Utah Football Giveaway - Click Here</a></span>
+      <span class="marquee-icon" aria-hidden="true">&#127944;</span>
+      <span><a href="{{ '/HogsGiveaway/' | relative_url }}">Click Here - 2026 Arkansas vs. Utah Football Giveaway - Click Here</a></span>
+      <span class="marquee-icon" aria-hidden="true">&#127944;</span>
+      <span><a href="{{ '/HogsGiveaway/' | relative_url }}">Click Here - 2026 Arkansas vs. Utah Football Giveaway - Click Here</a></span>
+      <span class="marquee-icon" aria-hidden="true">&#127944;</span>
+      <span><a href="{{ '/HogsGiveaway/' | relative_url }}">Click Here - 2026 Arkansas vs. Utah Football Giveaway - Click Here</a></span>
+      <span class="marquee-icon" aria-hidden="true">&#127944;</span>
     </div>
   </div>
+  {% endunless %}
 </header>
+
+<script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
