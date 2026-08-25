@@ -1,5 +1,35 @@
 <footer class="site-footer">
-  <p>© 2026 Choose Arkansas. Empowering local marketing and student-athletes.</p>
-  <img src="{{ '/assets/images/choose-arkansas-logo.png' | relative_url }}" alt="Choose Arkansas logo">
-  <p>Built and Managed by <a href="http://yieldhousedigital.com" target="_blank" rel="noopener">YIELDHOUSE.</a></p>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="{{ '/assets/img/logo-dark-bg.png' | relative_url }}" alt="iGoHire" class="footer-logo-img">
+      </div>
+
+      <div>
+        <h4>Site</h4>
+        <ul>
+          {% for item in site.data.nav %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+            {% if item.children %}
+              {% for child in item.children %}
+                <li><a href="{{ child.url | relative_url }}">&nbsp;&nbsp;— {{ child.title }}</a></li>
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@igohire.com">info@igohire.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; {{ 'now' | date: "%Y" }} iGoHire&reg;. All rights reserved.</span>
+      <span>Built and Managed by <a href="https://www.yourfreshsite.com" target="_blank" rel="noopener" class="credit-link">FreshSite</a></span>
+    </div>
+  </div>
 </footer>
