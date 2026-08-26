@@ -700,4 +700,5 @@ sup { font-size: 0.5em; vertical-align: super; line-height: 0; }
   .btn-group .btn { width: 100%; justify-content: center; text-align: center; }
   .listing-card .meta { gap: 10px; }
   .client-grid { border-left: none; border-right: none; }
+  .calendly-inline-widget { height: 1280px !important; }
 }
