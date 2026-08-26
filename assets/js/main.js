@@ -23,32 +23,4 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-
-  // Contact form — no backend, so submitting builds a pre-filled
-  // mailto: link (to info@igohire.com) and opens the visitor's
-  // default mail client instead of posting anywhere.
-  var contactForm = document.getElementById('contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var name = contactForm.elements['name'].value.trim();
-      var email = contactForm.elements['email'].value.trim();
-      var subjectField = contactForm.elements['subject'].value.trim();
-      var message = contactForm.elements['message'].value.trim();
-
-      var subject = subjectField || ('Website inquiry from ' + name);
-      var body =
-        'Name: ' + name + '\n' +
-        'Email: ' + email + '\n\n' +
-        message;
-
-      var mailtoLink =
-        'mailto:info@igohire.com' +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      window.location.href = mailtoLink;
-    });
-  }
 });
