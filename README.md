@@ -38,17 +38,31 @@ unmodified, used on the navy footer. If you get a proper vector/SVG
 version of the logo later, swap these two PNGs out directly — no
 other file needs to change.
 
-## Baseurl — important if you move off the current GitHub Pages URL
+## Baseurl — set for the custom domain
 
-`_config.yml` currently has:
+`_config.yml` is now set for the live domain:
 ```
-url: "https://yieldhouse.github.io"
-baseurl: "/iGoHire"
+url: "https://www.igohire.com"
+baseurl: ""
 ```
-This matches a GitHub Pages project page at
-`yieldhouse.github.io/iGoHire`. If you later point a custom domain
-(e.g. igohire.com) at this site, set `baseurl: ""` and `url` to the
-custom domain — otherwise every asset and nav link will 404.
+If you ever deploy this to a GitHub Pages *project* page instead (e.g.
+`yourname.github.io/iGoHire`) rather than a custom domain, you'll need
+to set `baseurl: "/iGoHire"` again (matching the repo name) — otherwise
+that works fine on a custom domain with `baseurl: ""`.
+
+## Why the site looks unstyled if you just open the .html files
+
+This is a **Jekyll source project**, not plain HTML — pages use Liquid
+templating (`{{ ... }}`) for the header/footer/nav and asset paths.
+Double-clicking `index.html` (or any page) straight from the unzipped
+folder in a browser will NOT process that Liquid — you'll see plain
+unstyled text with broken links/images, exactly like a raw template.
+It has to be built by Jekyll first. Two ways to actually preview it:
+
+1. **Push it to GitHub Pages** (see "Deploy" below) and view the live
+   URL — GitHub builds Jekyll automatically on every push.
+2. **Run it locally** with Jekyll (see "Run locally" below) and open
+   `http://localhost:4000` — never open the `.html` files directly.
 
 ## Run locally
 
